@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Movimentar</title>
+    <meta charset="utf-8">
+    <style>
+        html,
+        body {
+            font-size: 16px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            height: 100%; /* Ensure the body takes the full height of the viewport */
+            background-image: url('sky.jpg'); /* Replace 'background.jpg' with the path to your background image */
+            background-size: cover;
+            background-position: center;
+            overflow: hidden; /* Prevent scrollbars due to absolute positioning */
+        }
+
+        #obama {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            transition: background-color 1s ease;
+        }
+    </style>
+</head>
+
+<body onkeydown="movimentar(event)">
+    <div id="obama"> <img src="obama.png" width="100px" height="100px"> </div>
+    <script>
+        var deslocamento_horizontal = 0;
+        var deslocamento_vertical = 0;
+        var intervaloCores; // Variável para armazenar o intervalo de atualização de cores
+
+        function movimentar(event) {
+            const tecla = event.key;
+            if (tecla == 'ArrowUp')
+                subir();
+            if (tecla == 'ArrowDown')
+                descer();
+            if (tecla == 'ArrowLeft')
+                voltar();
+            if (tecla == 'ArrowRight')
+                avancar();
+        }
+
+        function subir() {
+            deslocamento_vertical -= 10;
+            obama.style.marginTop = `${deslocamento_vertical}px`;
+        }
+
+        function descer() {
+            deslocamento_vertical += 10;
+            obama.style.marginTop = `${deslocamento_vertical}px`;
+        }
+
+        function voltar() {
+            deslocamento_horizontal -= 10;
+            obama.style.marginLeft = `${deslocamento_horizontal}px`;
+        }
+
+        function avancar() {
+            deslocamento_horizontal += 10;
+            obama.style.marginLeft = `${deslocamento_horizontal}px`;
+        }
+
+        // Função para gerar uma cor aleatória em formato hexadecimal
+        function gerarCorAleatoria() {
+            return '#' + Math.floor(Math.random() * 16777215).toString(16);
+        }
+
+        // Função para atualizar a cor de fundo a cada 3 segundos
+        function atualizarCorDeFundo() {
+            const corAleatoria = gerarCorAleatoria();
+            obama.style.backgroundColor = corAleatoria;
+        }
+
+        // Iniciar o intervalo para a mudança de cor a cada 3 segundos
+        intervaloCores = setInterval(atualizarCorDeFundo, 1000);
+
+
+     
+    </script>
+    </div>
+</body>
+
+</html>

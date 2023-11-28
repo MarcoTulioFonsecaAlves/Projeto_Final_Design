@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="pt3_css/Atividade 08 - 3.css.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculadora IMC</title>
+</head>
+
+<body style="background-color: rgb(244, 255, 244)">
+  <link rel="stylesheet" href="style.css">
+  <div class="container">
+    <h1>Calculadora de IMC</h1>
+
+    <form id="imc-form" onsubmit="return calcIMC();">
+      <div class="imc-label">Sistema:</div>
+      <div class="imc-row">
+        <label>
+          <input type="radio" id="imc-metrico" name="imc-measure" onchange="measureIMC()" checked> Métrico
+        </label>
+        <label>
+          <input type="radio" id="imc-imperial" name="imc-measure" onchange="measureIMC()"> Imperial
+        </label>
+      </div>
+
+      <div class="imc-label">
+        Peso (<span id="imc-peso-unit">KG</span>):
+      </div>
+      <div class="imc-row">
+        <input id="imc-peso" type="number" min="1" max="635" required>
+      </div>
+
+      <div class="imc-label">Altura (<span id="imc-altura-unit">CM</span>):</div>
+      <div class="imc-row">
+        <input id="imc-altura" type="number" min="54" max="272" required>
+      </div>
+
+      <input type="submit" value="Calcular IMC">
+      <span id="imc-resultados"></span>
+    </form>
+
+    <script>
+      function measureIMC() {
+        let unit = document.getElementById("imc-metrico").checked;
+        let peso = document.getElementById("imc-peso");
+        let pesotu = document.getElementById("imc-peso-unit");
+        let altura = document.getElementById("imc-altura");
+        let alturatu = document.getElementById("imc-altura-unit");
+
+        if (unit) {
+          pesotu.innerHTML = "KG";
+          peso.min = 1;
+          peso.max = 635;
+          alturatu.innerHTML = "CM";
+          altura.min = 54;
+          altura.max = 272;
+        } else {
+          pesotu.innerHTML = "LBS";
+          peso.min = 2;
+          peso.max = 1400;
+          alturatu.innerHTML = "IN";
+          altura.min = 21;
+          altura.max = 107;
+        }
+      }
+
+      function calcIMC() {
+        let imc = null;
+        let unit = document.getElementById("imc-metrico").checked;
+        let peso = parseInt(document.getElementById("imc-peso").value);
+        let altura = parseInt(document.getElementById("imc-altura").value);
+        let resultados = document.getElementById("imc-resultados");
+
+        if (unit) {
+          altura = altura / 100;
+          imc = peso / (altura * altura);
+        } else {
+          imc = 703 * (peso / (altura * altura));
+        }
+
+        imc = Math.round(imc * 100) / 100;
+
+        if (imc < 18.5) {
+          resultados.innerHTML = imc + " - Abaixo do Peso";
+        } else if (imc < 25) {
+          resultados.innerHTML = imc + " - Normal";
+        } else if (imc < 30) {
+          resultados.innerHTML = imc + " - Sobrepeso";
+        } else if (imc < 35) {
+          resultados.innerHTML = imc + " - Obesidade grau I";
+        } else if (imc < 40) {
+          resultados.innerHTML = imc + " - Obesidade grau II";
+        } else {
+          resultados.innerHTML = imc + " - Obesidade grau III";
+        }
+        return false;
+      }
+    </script>

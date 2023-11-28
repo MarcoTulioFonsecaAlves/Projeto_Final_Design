@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Animação</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min
+.js"></script>
+    <style>
+        main {
+            background-image: url(cenario.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 700px;
+            height: 550px;
+            margin-left: 300px;
+            margin-top: 50px;
+
+            position: fixed;
+            justify-content: center;
+
+
+        }
+
+        /* Código da animação: */
+        @keyframes exemplo {
+            0% {
+                background-image: url(Link\ Right.png);
+            
+
+                left: 50px;
+                top: 50px;
+                width: 40px;
+                height: 40px;
+                background-size: contain;
+            }
+
+            25% {
+                background-image: url(Link\ Down.png);
+
+                left: 500px;
+                top: 50px;
+                width: 40px;
+                height: 40px;
+            background-size: contain;
+            }
+
+            50% {
+                background-image: url(Link\ Left.png);
+
+                left: 500px;
+                top: 200px;
+                width: 40px;
+                height: 40px;
+            background-size: contain;
+            }
+
+            75% {
+
+                background-image: url(Link\ Up.png);
+
+                left: 100px;
+                top: 350px;
+                width: 40px;
+                height: 40px;
+            background-size: contain;
+                
+            }
+
+            100% {
+                background-image: url(Link\ Right.png);
+                background-size: contain;
+
+    
+                left: 50px;
+                top: 50px;
+                width: 40px;
+                height: 40px;
+                background-size: contain;
+   
+            }
+        }
+
+        div {
+            
+            width: 25px;
+            height: 25px;
+
+            position: relative;
+            animation-name: exemplo;
+            animation-duration: 10s;
+            
+            animation-iteration-count: infinite;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div></div>
+    </main>
+</body>
+
+</html>
