@@ -1,0 +1,334 @@
+html,
+        body {
+            font-size: 16px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+        }
+
+        .cartao {
+            width: 15rem;
+            height: 30.3rem;
+            padding: 1rem;
+            margin: 1rem auto;
+            border-radius: .7rem;
+            border: .1rem #c9c7c7 solid;
+            /* offset-x | offset-y | blur-radius | spread-radius | color */
+            box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+        }
+
+        .titulo {
+            margin: 0 0 1rem 0;
+        }
+
+        footer {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        button {
+            color: white;
+            padding: .3rem 2rem;
+            background-color: blue;
+            border: none;
+        }
+
+        body {
+            background-color: aqua;
+        }
+        
+        #navbarmaster {
+            background-color: rgb(176, 230, 248);
+            box-shadow: 0px 0px 15px currentcolor;
+            border-bottom: 2px solid currentcolor;
+            padding: 15px;
+          }
+        
+        #atividade {
+            border: 10px solid rgb(18, 195, 248);
+            background-color: lightblue;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            align-items: center;
+            justify-content: center;
+            font-family: Signika Negative;
+            text-align: center;
+            box-shadow: 0px 0px 15px currentcolor;
+          }
+        
+        #botaodiv {
+            text-align: center;
+        }
+        
+        #imagem_meme {
+            text-align: center;
+        }
+        
+        /* Card que inverte --> */
+        
+        .flip-card {
+            background-color: transparent;
+            height: 250px;
+            border: 15px #0ba156;
+            perspective: 1000px;
+            margin: auto;
+            width: 100%;
+            padding: 10px;
+          }
+          
+          .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+          }
+          
+          .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+          }
+          
+          .flip-card-front, .flip-card-back {
+            position: absolute;
+            border-radius: 40px;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+          }
+          
+          .flip-card-front {
+            background-color: #0ba156;
+            color: black;
+          }
+          
+          .flip-card-back {
+            background-color: #2980b9;
+            color: white;
+            transform: rotateY(180deg);
+            height: 230px;
+          }
+        
+        #palavra_resposta {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            font-family: Signika Negative;
+            font-size:50px;
+        }
+        
+        #cartao {
+            margin: auto;
+            width: 60%;
+            padding: 10px;
+        }
+        
+        #resposta_final {
+            position: static;
+            bottom: 50%;
+            margin-bottom: 60px;
+            width: 100%;
+            font-size: 16px;
+            padding: 40px;
+            padding-top: 30px;
+            padding-bottom: 90px;
+        }
+        
+        /* NavBar */
+        
+        .sidenav {
+          height: 100%;
+          width: 0;
+          position: fixed;
+          z-index: 1;
+          top: 0;
+          left: 0;
+          background-color: #111;
+          overflow-x: hidden;
+          transition: 0.5s;
+          padding-top: 60px;
+        }
+        
+        .sidenav a {
+          padding: 8px 8px 8px 32px;
+          text-decoration: none;
+          font-size: 25px;
+          color: #03fcf4;
+          display: block;
+          transition: 0.3s;
+        }
+        
+        .sidenav .closebtn {
+          position: absolute;
+          top: 0;
+          right: 25px;
+          font-size: 36px;
+          margin-left: 50px;
+        }
+        
+        @media screen and (max-height: 450px) {
+          .sidenav {padding-top: 15px;}
+          .sidenav a {font-size: 18px;}
+        }
+        
+        #btnmenu {
+          color: #03fcf4;
+        }
+        
+        #btnmenu:hover  {
+          background-color: #03fcf4;
+          color: black;
+        }
+        
+        #titulo {
+          width: 300px;
+          border: 2px solid rgb(255, 255, 255);
+          padding: 10px;
+          background-color: #5affcd;
+          border-radius: 10px;
+          color: rgb(245, 44, 111);
+          animation: mymove 4s infinite;
+        }
+        
+        @keyframes mymove {
+          50% {color: rgb(19, 15, 241);}
+        }
+
+
+        #logonav {
+            border-width: 5px;
+            color: aqua;
+            
+        }
+        
+        #menubtn {
+            border-radius: 4px;
+            background-color: transparent;
+            border: none;
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 28px;
+            padding: 0px;
+            width: 150px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 0px;
+          }
+          
+          #menubtn span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+          }
+          
+          #menubtn span:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+          }
+          
+          #menubtn:hover span {
+            padding-right: 25px;
+          }
+          
+          #menubtn:hover span:after {
+            opacity: 1;
+            right: 0;
+          }
+        
+          .closebtn:hover{
+            color: white;
+          }
+        
+          /* Style the sidenav links and the dropdown button */
+          .dropdown-btn {
+            background-color: transparent;
+            border: none;
+            color: #03fcf4;
+            font-size: 28px;
+            padding: 0px;
+            width: 150px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 0px;
+            width: 550px;
+        }
+        
+        .dropdown-btn:hover  {
+          background-color: #03fcf4;
+          color: black;
+        }
+        
+        .dropdown-btn span {
+          cursor: pointer;
+          display: inline-block;
+          position: relative;
+          transition: 0.5s;
+        }
+        
+        .dropdown-btn span:after {
+          content: '\00bb';
+          position: absolute;
+          opacity: 0;
+          top: 0;
+          right: -20px;
+          transition: 0.5s;
+        }
+        
+        .dropdown-btn:hover span {
+          padding-right: 25px;
+        }
+        
+        .dropdown-btn:hover span:after {
+          opacity: 1;
+          right: 0;
+        }
+        
+        /* On mouse-over */
+        .dropdown-btn:hover {
+          color: #000000;
+        }
+        
+        .dropdown-container a:hover{
+          color: white;
+        }
+        
+        /* Main content */
+        .main {
+          margin-left: 200px; /* Same as the width of the sidenav */
+          font-size: 20px; /* Increased text to enable scrolling */
+          padding: 0px 10px;
+        }
+        
+        /* Add an active class to the active dropdown button */
+        .active {
+          color: white;
+        }
+        
+        /* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+        .dropdown-container {
+          display: none;
+          background-color: #262626;
+          padding-left: 8px;
+        }
+        
+        /* Optional: Style the caret down icon */
+        .fa-caret-down {
+          float: right;
+          padding-right: 8px;
+        }
+        
+        /* Some media queries for responsiveness */
+        @media screen and (max-height: 450px) {
+          .sidenav {padding-top: 15px;}
+          .sidenav a {font-size: 18px;}
+        }
+        

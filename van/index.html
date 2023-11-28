@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Papelaria Van</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/atividade3.css">
+    <link href="https://fonts.googleapis.com/css?family=Lilita+One:regular" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Pacifico:regular" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script:regular,500,600,700" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Signika+Negative:300,regular,500,600,700" rel="stylesheet" />
+    
+    <!--Script da Navbar-->
+    <script src="js/index.js"></script>
+    <style>
+        .grid-container {
+            display: flex;
+            margin-top: 40px;
+            column-gap: 60px;
+            grid-template-columns: auto auto auto auto;
+            padding: 5px;
+            justify-content: center;
+            flex-wrap: nowrap;
+        }
+
+        .grid-item {
+            padding: 20px;
+            background-color: rgb(154, 182, 182);
+            border-radius: 30px;
+            text-align: center;
+            border: 4px solid rgb(153, 153, 153);
+        }
+
+        .imagem{
+            margin: 14px;
+            border-radius: 10%;
+        }
+
+        .preco{
+            font-size: small;
+            padding-left: 22px;
+            padding-right: 22px;
+            border-radius: 10%;
+        }
+
+        #myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Caption of Modal Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {  
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)} 
+  to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)} 
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
+    </style>
+  </head>
+<body style="background-color: rgb(255, 255, 255);">
+  <nav id="navbarmaster"class="navbar navbar-expand-sm navbar-dark">
+    <div id="navbar11" class="container-fluid">
+      <div >
+      <a id="titulo" style="font-family: Lilita One" class="navbar-brand">Papelaria Van</a>
+    </div>
+      <a class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </a>
+      <!--O que faz apareçer a tela que arrasta na esquerda do site-->
+      <div style="background-color: rgb(40, 52, 75);" id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a id="btnmenu" href="../index.html">Tela Inicial</a>
+      </div>
+
+      <script>
+        /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+        var dropdown = document.getElementsByClassName("dropdown-btn");
+        var i;
+        
+        for (i = 0; i < dropdown.length; i++) {
+          dropdown[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var dropdownContent = this.nextElementSibling;
+            if (dropdownContent.style.display === "block") {
+              dropdownContent.style.display = "none";
+            } else {
+              dropdownContent.style.display = "block";
+            }
+          });
+        }
+        </script>
+        <a onclick="alert('A primeira imagem possui uma MODAL, porém apenas essa possui, por algum motivo o código não quer se aplicar em todas as imagens infelizmente. Então clique apenas na primeira imagem e verá o funcionamento do JavaScript.');" class="btn btn-primary">Clique Aqui! Urgente!</a>
+      
+      <a href="../index.html" id="menubtn"><span style="color: rgb(0, 0, 0); font-size:30px;cursor:pointer">&#9776; Voltar</span></a>
+    </div>
+  </nav>
+
+
+    <div class="grid-container">
+        <div class="grid-item">
+            <div class="produto">
+                <h1 class="titulo">Borracha</h1>
+                <div class="corpo">
+                    <img id="myImg" style="width: 200px;" src="img/borracha.webp" class="imagem">
+                    <p>Fruta.</p>
+                </div>
+                <footer class="rodape">
+                    <a class="btn btn-primary" href="detalhes.html">Detalhes</a>
+                    <button class="preco">1,64 USD</button>
+
+                </footer>
+                <div id="myModal" class="modal">
+                  <span class="close">&times;</span>
+                  <img class="modal-content" id="img1">
+                  <div id="caption"></div>
+                </div>
+
+            </div>
+        </div>
+        
+        <div class="grid-item">
+            <div class="produto">
+                <h1 class="titulo">Caderno</h1>
+                <div class="corpo">
+                    <img id="myImg2" style="width: 200px;" src="img/caderno.webp" alt="foto.avif" class="imagem">
+                    <p>Quilo de carne</p>
+                </div>
+                <footer class="rodape">
+                    <a class="btn btn-primary" href="detalhes.html">Detalhes</a>
+                    <button class="preco">18,99 USD</button>
+
+                </footer>
+                <div id="myModal2" class="modal">
+                  <span class="close">&times;</span>
+                  <img class="modal-content" id="img2">
+                  <div id="caption2"></div>
+                </div>
+
+            </div>
+        </div>
+        <div class="grid-item">
+            <div class="produto">
+                <h1 class="titulo">Caneta</h1>
+                <div class="corpo">
+                    <img id="myImg" style="width: 200px;" src="img/caneta.jpg" alt="foto.avif" class="imagem">
+                    <p>Bebida energética</p>
+                </div>
+                <footer class="rodape">
+                    <a class="btn btn-primary" href="detalhes.html">Detalhes</a>
+                    <button class="preco">4,99 USD</button>
+
+                </footer>
+                <div id="myModal" class="modal">
+                  <span class="close">&times;</span>
+                  <img class="modal-content" id="img3">
+                  <div id="caption"></div>
+                </div>
+
+            </div>
+        </div>
+        <div class="grid-item">
+            <div class="produto">
+                <h1 class="titulo">Estojo</h1>
+                <div class="corpo">
+                    <img id="myImg" style="width: 200px;" src="img/estojo.jpg" alt="foto.avif" class="imagem">
+                    <p>Fruta.</p>
+                </div>
+                <footer class="rodape">
+                    <a class="btn btn-primary" href="detalhes.html">Detalhes</a>
+                    <button class="preco">1,64 USD</button>
+
+                </footer>
+                <div id="myModal" class="modal">
+                  <span class="close">&times;</span>
+                  <img class="modal-content" id="img4">
+                  <div id="caption"></div>
+                </div>
+
+            </div>
+        </div>
+        
+
+    </div>
+    <br>
+    <div class="grid-container">
+      <div class="grid-item">
+          <div class="produto">
+              <h1 class="titulo">Lapis</h1>
+              <div class="corpo">
+                  <img id="myImg" style="width: 200px;" src="img/lapis.jfif" alt="foto.avif" class="imagem">
+                  <p>Fruta.</p>
+              </div>
+              <footer class="rodape">
+                  <a class="btn btn-primary" href="detalhes.html">Detalhes</a>
+                  <button class="preco">1,64 USD</button>
+
+              </footer>
+              <div id="myModal" class="modal">
+                <span class="close">&times;</span>
+                <img class="modal-content" id="img5">
+                <div id="caption"></div>
+              </div>
+
+          </div>
+      </div>
+      
+      <div class="grid-item">
+          <div class="produto">
+              <h1 class="titulo">Marca Texto</h1>
+              <div class="corpo">
+                  <img id="myImg" style="width: 200px;" src="img/marcatexto.webp" alt="foto.avif" class="imagem">
+                  <p>Quilo de carne</p>
+              </div>
+              <footer class="rodape">
+                  <a class="btn btn-primary" href="detalhes.html">Detalhes</a>
+                  <button class="preco">18,99 USD</button>
+
+              </footer>
+              <div id="myModal" class="modal">
+                <span class="close">&times;</span>
+                <img class="modal-content" id="img6">
+                <div id="caption"></div>
+              </div>
+
+          </div>
+      </div>
+      <div class="grid-item">
+          <div class="produto">
+              <h1 class="titulo">Massinha</h1>
+              <div class="corpo">
+                  <img id="myImg" style="width: 200px;" src="img/massinha.jpg" alt="foto.avif" class="imagem">
+                  <p>Bebida energética</p>
+              </div>
+              <footer class="rodape">
+                  <a class="btn btn-primary" href="detalhes.html">Detalhes</a>
+                  <button class="preco">4,99 USD</button>
+
+              </footer>
+              <div id="myModal" class="modal">
+                <span class="close">&times;</span>
+                <img class="modal-content" id="img7">
+                <div id="caption"></div>
+              </div>
+
+          </div>
+      </div>
+      <div class="grid-item">
+          <div class="produto">
+              <h1 class="titulo">Mochila</h1>
+              <div class="corpo">
+                  <img id="myImg" style="width: 200px;" src="img/mochila.webp" alt="foto.avif" class="imagem">
+                  <p>Fruta.</p>
+              </div>
+              <footer class="rodape">
+                  <a class="btn btn-primary" href="detalhes.html">Detalhes</a>
+                  <button class="preco">1,64 USD</button>
+
+              </footer>
+              <div id="myModal" class="modal">
+                <span class="close">&times;</span>
+                <img class="modal-content" id="img8">
+                <div id="caption"></div>
+              </div>
+
+          </div>
+      </div>
+      
+
+  </div>
+
+  <script>
+    // Get the modal
+    var modal = document.getElementById("myModal");
+    var modal2 = document.getElementById("myModal2");
+    
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("myImg");
+    var img2 = document.getElementById("myImg2");
+    var modalImg = document.getElementById("img1");
+    var modalImg2 = document.getElementById("img2");
+    var captionText = document.getElementById("caption");
+    var captionText2 = document.getElementById("caption2");
+    img.onclick = function(){
+      modal.style.display = "block";
+      modalImg.src = this.src;
+      captionText.innerHTML = this.alt;
+    }
+
+    img2.onclick = function(){
+      modal2.style.display = "block";
+      modalImg2.src = this.src;
+      captionText2.innerHTML = this.alt;
+    }
+    
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+    var span2 = document.getElementsByClassName("close")[0];      
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() { 
+      modal.style.display = "none";
+      modal2.style.display = "none";
+    }
+    </script>
+
+
+
+
+   
+</body>
+</html>
